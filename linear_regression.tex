@@ -14,6 +14,7 @@
 
 \title{Linear Regression From Scratch}
 \author{Ruhani Rekhi}
+\date{}
 
 \begin{document}
 \maketitle
@@ -59,7 +60,7 @@ $E$. This would help in minimizing $E$ since if we know the direction of the ste
 \frac{\partial E}{\partial b_0} = \frac{-2}{n}\sum_{i=0}^{n}(y_i - (b_0 + b_1x_1))
 \end{equation}
 
-We have the direction of the steepest ascent in respect to $b_0$ and $b_1$, so now we have to go the opposite direction. 
+\noindent We have the direction of the steepest ascent in respect to $b_0$ and $b_1$, so now we have to go the opposite direction. 
 To do this for each iteration we take our new $b_1$ and $b_0$ and assign the current $b_1$ and $b_1$ subtracted by our learning rate multiplied 
 by the direction of the steepest ascent 
 
@@ -70,7 +71,7 @@ b_0 = b_0 - L * \frac{\partial E}{\partial b_0}
 \end{split}
 \end{equation}
 
-This approach helps us accomodate many variables when working with linear regression. We are subtracting $\frac{\partial E}{\partial b_1}$ 
+\noindent This approach helps us accomodate many variables when working with linear regression. We are subtracting $\frac{\partial E}{\partial b_1}$ 
 and $\frac{\partial E}{\partial b_0}$ from the respective variables to go the opposite direction of the steepest ascent. The learning rate
 determines how large the steps we take in that said direction. The larger our $L$ (learning rate) the faster we can get to optimization, the 
 lower the rate it will take longer to reach optimization but we can pay attention to more details. We will try to utilize a learning rate of around
