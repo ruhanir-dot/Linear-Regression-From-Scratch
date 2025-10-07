@@ -1,4 +1,4 @@
-Linear Regression From Scratch
+### Linear Regression From Scratch
 
 This project implements linear regression (gradient descent) from scratch in Python and includes a short LaTeX writeup.
 
@@ -67,3 +67,4 @@ Troubleshooting
 
 License
 MIT
+
