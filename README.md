@@ -1,6 +1,7 @@
 # Linear Regression From Scratch
-
 This project implements linear regression (gradient descent) from scratch in Python and includes a short LaTeX writeup.
+<img width="534" height="415" alt="image" src="https://github.com/user-attachments/assets/1a908826-4b39-4cce-a22e-562becf4040e" />
+
 
 ### Files
 - `linear_regression.py` - Python script that reads `Lungs.csv`, runs gradient descent to fit a linear model, and plots the result.
@@ -67,5 +68,6 @@ Troubleshooting
 
 License
 MIT
+
 
 
