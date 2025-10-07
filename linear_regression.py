@@ -1,5 +1,5 @@
 import pandas as pd 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # utilizing matplotlib for visualization
 
 data = pd.read_csv("C:\\Users\\Ruhani R\\Downloads\\Lungs.csv")
 
