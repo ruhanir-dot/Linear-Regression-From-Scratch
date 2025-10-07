@@ -27,13 +27,19 @@ The importance of the project lies in its ability to provide a foundational unde
 
 \subsection{Basics Of Linear Regression}
 Regression is a method used to model the relationship between a dependent variable and one or multiple independent variables. Linear regression is a specific type of regression analysis where we model the relationsip between the dependent variable and independent variable(s) as a linear function.
-The main goal of linear regression is to determine the function of a best fit line that minimizes error. Error in this case is defined as difference between the predicted and actual value. Mathematically written as $ e = y - \hat{y}  $ where $\hat{y}$ is the predicted value. Our function is defined as $ \hat{y} = b_0 + b_1x_1 $ where $b_0$ is our y-intercept and $b_1$ is the slope.
+The main goal of linear regression is to determine the function of a best fit line that minimizes error. Error in this case is defined as difference between the predicted and actual value. Mathematically written as $ e = y - \hat{y}  $ where $\hat{y}$ is the predicted value. Our function is defined as $ \hat{y} = b_0 + b_1x_1 $ where $b_0$ is our y-intercept and $b_1$ is the slope. 
+
+\subsection{Minimizing the Error Function}
+
+To begin minimizing the error function we need to define what the error function is. 
+
+Let $E$ be our error function defined as :
+\[E = \frac{1}{n} \sum_{i}^{n}(y_i - \hat{y_i})^2
+    = \frac{1}{n} \sum_{i}^{n}(y_i - (b_0 + b_1x_1))^2
+\]
 
 
-Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-\[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i\]
-denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
-
-
+\noindent This value is referred to as the MSE or mean squared error. In layman terms, we are taking the difference from all the actual points y-value
+and what our linear function would predict what the y-value would be and square the difference and divide it by the total number of points to 
+derive our MSE. Now that we have defined our error function $E$ we now want to minimize our E : find the function with lowest possible $E$.
 \end{document}
