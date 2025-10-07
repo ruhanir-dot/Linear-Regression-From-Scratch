@@ -41,5 +41,39 @@ Let $E$ be our error function defined as :
 
 \noindent This value is referred to as the MSE or mean squared error. In layman terms, we are taking the difference from all the actual points y-value
 and what our linear function would predict what the y-value would be and square the difference and divide it by the total number of points to 
-derive our MSE. Now that we have defined our error function $E$ we now want to minimize our E : find the function with lowest possible $E$.
+derive our MSE. Now that we have defined our error function $E$ we now want to minimize our E : find the function with lowest possible $E$. The only things
+we can control are our $b_0$ (y-intercept) and $b_1$ (slope) since our $x$ and $y$ are just our data points. Simply put, we want to find the slope and intercept that minimize 
+$E$. We can do this by taking the partial derivative of $E$ in respect to $b_0$ and $b_1$. This gives us the direction of the steepest ascent with respect to $b_0$
+and $b_1$. The method of steepest ascent maximizes a function by moving direction of the gradient thus we would be finding a $b_0$ and $b_1$ that would maximally increase 
+$E$. This would help in minimizing $E$ since if we know the direction of the steepest ascent we can go the opposite direction and find the steepest descent.
+
+
+\begin{equation} 
+\begin {split}
+\frac{\partial E}{\partial b_1} &= \frac{1}{n} \sum_{i=0}^{n}(2(y_i - (b_0 + b_1x_1)) * (-x_i)) \\
+&= \frac{-2}{n}\sum_{i=0}^{n}x_i(y_i - (b_0 + b_1x_1))
+\end {split}
+\end{equation}
+
+\begin{equation} 
+\frac{\partial E}{\partial b_0} = \frac{-2}{n}\sum_{i=0}^{n}(y_i - (b_0 + b_1x_1))
+\end{equation}
+
+We have the direction of the steepest ascent in respect to $b_0$ and $b_1$, so now we have to go the opposite direction. 
+To do this for each iteration we take our new $b_1$ and $b_0$ and assign the current $b_1$ and $b_1$ subtracted by our learning rate multiplied 
+by the direction of the steepest ascent 
+
+\begin{equation} 
+\begin{split}
+b_1 = b_1 - L * \frac{\partial E}{\partial b_1} \\
+b_0 = b_0 - L * \frac{\partial E}{\partial b_0}
+\end{split}
+\end{equation}
+
+This approach helps us accomodate many variables when working with linear regression. We are subtracting $\frac{\partial E}{\partial b_1}$ 
+and $\frac{\partial E}{\partial b_0}$ from the respective variables to go the opposite direction of the steepest ascent. The learning rate
+determines how large the steps we take in that said direction. The larger our $L$ (learning rate) the faster we can get to optimization, the 
+lower the rate it will take longer to reach optimization but we can pay attention to more details. We will try to utilize a learning rate of around
+0.0001. Now we will apply the theory explained in this paper to Python!
+
 \end{document}
